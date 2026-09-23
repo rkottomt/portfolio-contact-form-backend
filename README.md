@@ -164,13 +164,13 @@ git push -u origin main
    - `SUPABASE_KEY`: Your Supabase secret key (`sb_secret_...`)
    - `ADMIN_KEY`: A secret key for admin access (make it random/long)
 
-4. Deploy and get your public URL (e.g., `https://portfolio-contact.onrender.com`)
+4. Deploy and get your public URL (e.g., `https://portfolio-contact-form-l1iq.onrender.com`)
 
 ## Frontend Integration
 
 Your portfolio's contact form will call:
 ```javascript
-fetch('https://portfolio-contact.onrender.com/submit-question', {
+fetch('https://portfolio-contact-form-l1iq.onrender.com/submit-question', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -181,7 +181,7 @@ fetch('https://portfolio-contact.onrender.com/submit-question', {
 })
 ```
 
-See `contact-form.html` in your portfolio repo for implementation.
+Live form: the Contact section of https://rkottomt.github.io/ (source: `ask-form.js` in https://github.com/rkottomt/rkottomt.github.io). It calls `/submit-question` when the visitor clicks **Send question**, then shows the success message or the `error` string from the response.
 
 ## Viewing Submissions
 
