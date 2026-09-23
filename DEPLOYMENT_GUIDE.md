@@ -35,7 +35,7 @@ CREATE INDEX idx_questions_created_at ON questions(created_at DESC);
 2. Click "API"
 3. Copy these values:
    - **Project URL** → This is your `SUPABASE_URL`
-   - **anon public** key → This is your `SUPABASE_KEY`
+   - **Secret key** (`sb_secret_...`) → This is your `SUPABASE_KEY` (never put it in frontend code)
 
 Save these somewhere safe - you'll need them next.
 
@@ -58,7 +58,7 @@ Create a file named `.env` in the project root with:
 
 ```
 SUPABASE_URL=https://your-project-id.supabase.co
-SUPABASE_KEY=your-anon-public-key
+SUPABASE_KEY=sb_secret_your-secret-key
 ADMIN_KEY=your-secret-admin-key-make-this-random
 ```
 
@@ -163,7 +163,7 @@ Click "Add Environment Variable" three times:
 
 2. Second variable:
    - Key: `SUPABASE_KEY`
-   - Value: (paste your Supabase anon key)
+   - Value: (paste your Supabase secret key)
 
 3. Third variable:
    - Key: `ADMIN_KEY`

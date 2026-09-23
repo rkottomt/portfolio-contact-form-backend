@@ -99,7 +99,7 @@ CREATE INDEX idx_questions_created_at ON questions(created_at DESC);
 4. Get your credentials:
    - Go to Settings → API
    - Copy your `Project URL` (SUPABASE_URL)
-   - Copy your `anon public` key (SUPABASE_KEY)
+   - Copy your **secret** key (`sb_secret_...`) → SUPABASE_KEY (backend only; bypasses RLS)
 
 ### 2. Local Development
 
@@ -113,7 +113,7 @@ pip install -r requirements.txt
 Create `.env` file:
 ```
 SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_KEY=your-anon-public-key
+SUPABASE_KEY=sb_secret_your-secret-key
 ADMIN_KEY=your-secret-admin-key-here
 ```
 
@@ -161,7 +161,7 @@ git push -u origin main
 
 3. Add Environment Variables in Render dashboard:
    - `SUPABASE_URL`: Your Supabase project URL
-   - `SUPABASE_KEY`: Your Supabase anon key
+   - `SUPABASE_KEY`: Your Supabase secret key (`sb_secret_...`)
    - `ADMIN_KEY`: A secret key for admin access (make it random/long)
 
 4. Deploy and get your public URL (e.g., `https://portfolio-contact.onrender.com`)
