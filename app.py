@@ -92,6 +92,19 @@ def get_questions():
         return jsonify({'error': 'Failed to retrieve questions'}), 500
 
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({
+        'service': 'Portfolio contact form backend',
+        'frontend': 'https://rkottomt.github.io/#contact',
+        'endpoints': {
+            'POST /submit-question': 'JSON {name, email, question} -> stores the question in Supabase',
+            'GET /questions': 'Lists submissions (requires X-Admin-Key header)',
+            'GET /health': 'Service and database status',
+        },
+    }), 200
+
+
 @app.route('/health', methods=['GET'])
 def health():
     """Health check endpoint."""
